@@ -1,0 +1,23 @@
+.mainGallery {
+	user-select: none;
+
+	&Container {
+		margin-bottom: 5px;
+		position: relative;
+	}
+}
+
+.galleryMainPhoto {
+}
+
+.navigationGallery {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	z-index: 3;
+	transform: translate(-50%, 0);
+}
+
+.previewPhotoGallery {
+	margin: 0 auto;
+}
