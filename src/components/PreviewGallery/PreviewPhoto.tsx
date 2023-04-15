@@ -7,9 +7,10 @@ import cl from "classnames"
 interface Props extends CommonClassProps {
 	photos: Photo[]
 	activePhotoIndex: number
+	setNewPhoto: (id: number) => void
 }
 
-export const PreviewPhoto: React.FC<Props> = ({ photos, activePhotoIndex, className }) => {
+export const PreviewPhoto: React.FC<Props> = ({ photos, activePhotoIndex, className, setNewPhoto }) => {
 
 	if (!photos.length) {
 		return null
@@ -26,13 +27,13 @@ export const PreviewPhoto: React.FC<Props> = ({ photos, activePhotoIndex, classN
 	}, [activePhotoIndex])
 
 	return (
-		<div className={cl(s.previewPhoto, className)}>
+		<div className={cl(s.previewPhoto, className,)}>
 			{useMemo(() => (
 				<ul className={s.previewPhotoTrack}
 					ref={previewContainer}>
-					{photos.map((photo) => (
-						<li key={photo.id} className={s.previewPhotoPreview}>
-							<img src={photo.preview} alt={photo.desc} className={s.previewPhotoImage} />
+					{photos.map((photo, id) => (
+						<li key={photo.id} >
+							<button className={s.previewPhotoPreview} onClick={() => setNewPhoto(id)}><img src={photo.preview} alt={photo.desc} className={s.previewPhotoImage} /></button>
 						</li>
 					))}
 				</ul>

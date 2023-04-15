@@ -17,9 +17,13 @@
 	display: inline-block;
 	margin: 5px;
 	height: 80px;
-	background: #92a9b2;
+	// background: #92a9b2;
 	border-radius: 5px;
 	overflow: hidden;
+	border: none;
+	background: none;
+	padding: 0;
+	cursor: pointer;
 }
 
 .previewPhotoImage {

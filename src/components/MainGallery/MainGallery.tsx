@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { MainPhoto } from "../MainPhoto/MainPhoto"
+import { TransitionPhoto } from "../MainPhoto/TransitionPhoto"
 import { Navigation } from "../Navigation/Navigation"
 import { PreviewPhoto } from "../PreviewGallery/PreviewPhoto"
 import { Photo } from "../Types/Types"
@@ -15,9 +15,6 @@ export const MainGallery: React.FC<Props> = ({ photos }) => {
 	const prevPhoto = photos[indexCurrentPhoto - 1]
 	const nextPhoto = photos[indexCurrentPhoto + 1]
 
-
-
-
 	if (!photos.length) {
 		return null
 	}
@@ -25,11 +22,13 @@ export const MainGallery: React.FC<Props> = ({ photos }) => {
 	return (
 		<div className={s.mainGallery}>
 			<div className={s.mainGalleryContainer}>
-				<MainPhoto
-					prevPhoto={prevPhoto}
-					currentPhoto={currentPhoto}
-					nextPhoto={nextPhoto}
-					className={s.galleryMainPhoto}
+				<TransitionPhoto
+					// prevPhoto={prevPhoto}
+					// currentPhoto={currentPhoto}
+					// nextPhoto={nextPhoto}
+					// className={s.galleryMainPhoto}
+					photos={photos}
+					indexCurrentPhoto={indexCurrentPhoto}
 				/>
 				<Navigation
 					className={s.navigationGallery}
@@ -43,6 +42,7 @@ export const MainGallery: React.FC<Props> = ({ photos }) => {
 				className={s.previewPhotoGallery}
 				photos={photos}
 				activePhotoIndex={indexCurrentPhoto}
+				setNewPhoto={setIndexCurrentPhoto}
 			/>
 		</div>
 	)
