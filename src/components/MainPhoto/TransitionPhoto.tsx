@@ -21,13 +21,13 @@ const hidePhoto = (element: HTMLElement | null) => {
 
 	element.dataset.active = "false"
 
-	if (element.previousSibling) {
+	if (element.previousElementSibling) {
 		// @ts-ignore
-		element.previousSibling.dataset.active = "false"
+		element.previousElementSibling.dataset.active = "false"
 	}
-	else if (element.nextSibling) {
+	if (element.nextElementSibling) {
 		// @ts-ignore
-		element.nextSibling.dataset.active = "false"
+		element.nextElementSibling.dataset.active = "false"
 	}
 }
 
@@ -37,14 +37,14 @@ const showPhoto = (element: HTMLElement | null) => {
 	}
 	element.dataset.active = "true"
 
-	if (element.previousSibling) {
+	if (element.previousElementSibling) {
 		// @ts-ignore
-		element.previousSibling.dataset.active = "prepared"
+		element.previousElementSibling.dataset.active = "prepared"
 	}
 
-	else if (element.nextSibling) {
+	if (element.nextElementSibling) {
 		// @ts-ignore
-		element.nextSibling.dataset.active = "prepared"
+		element.nextElementSibling.dataset.active = "prepared"
 	}
 }
 

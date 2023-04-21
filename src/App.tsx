@@ -7,46 +7,40 @@ function App() {
 			<MainGallery photos={[
 				{
 					id: 1,
-					src: "/photos/1.jpg",
-					preview: "/photos/preview/1.jpg",
+					src: "/photos/screen/1.png",
+					preview: "/photos/screen/1.png",
 					desc: "nature1"
 				},
 				{
 					id: 2,
-					src: "/photos/2.jpg",
-					preview: "/photos/preview/2.jpg",
+					src: "/photos/screen/2.png",
+					preview: "/photos/screen/2.png",
 					desc: "nature2"
 				},
 				{
 					id: 3,
-					src: "/photos/3.jpg",
-					preview: "/photos/preview/3.jpg",
+					src: "/photos/screen/3.png",
+					preview: "/photos/screen/3.png",
 					desc: "nature3"
 				},
 				{
 					id: 4,
-					src: "/photos/4.jpg",
-					preview: "/photos/preview/4.jpg",
+					src: "/photos/screen/4.png",
+					preview: "/photos/screen/4.png",
 					desc: "nature4"
 				},
 				{
 					id: 5,
-					src: "/photos/5.jpg",
-					preview: "/photos/preview/5.jpg",
+					src: "/photos/screen/5.png",
+					preview: "/photos/screen/5.png",
 					desc: "nature5"
 				},
 				{
 					id: 6,
-					src: "/photos/6.jpg",
-					preview: "/photos/preview/6.jpg",
+					src: "/photos/screen/6.png",
+					preview: "/photos/screen/6.png",
 					desc: "nature6"
 				},
-				{
-					id: 7,
-					src: "/photos/7.jpg",
-					preview: "/photos/preview/7.jpg",
-					desc: "nature7"
-				}
 			]} />
 		</div>
 	)
