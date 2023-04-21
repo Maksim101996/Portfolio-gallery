@@ -23,7 +23,7 @@ const hidePhoto = (element: HTMLElement | null) => {
 		// @ts-ignore
 		element.previousSibling.dataset.active = "false"
 	}
-	if (element.nextSibling) {
+	else if (element.nextSibling) {
 		// @ts-ignore
 		element.nextSibling.dataset.active = "false"
 	}
@@ -38,7 +38,7 @@ const showPhoto = (element: HTMLElement | null) => {
 		// @ts-ignore
 		element.previousSibling.dataset.active = "prepared"
 	}
-	if (element.nextSibling) {
+	else if (element.nextSibling) {
 		// @ts-ignore
 		element.nextSibling.dataset.active = "prepared"
 	}
