@@ -5,7 +5,7 @@ import s from "./TransitionPhoto.module.scss"
 
 interface Props extends CommonClassProps {
 	photos: Photo[]
-	indexCurrentPhoto: number
+	indexCurrentPhoto: any
 }
 
 type RefT = React.MutableRefObject<HTMLDivElement | null>
@@ -18,7 +18,9 @@ const hidePhoto = (element: HTMLElement | null) => {
 	if (!element) {
 		return
 	}
+
 	element.dataset.active = "false"
+
 	if (element.previousSibling) {
 		// @ts-ignore
 		element.previousSibling.dataset.active = "false"
@@ -34,17 +36,18 @@ const showPhoto = (element: HTMLElement | null) => {
 		return
 	}
 	element.dataset.active = "true"
+
 	if (element.previousSibling) {
 		// @ts-ignore
 		element.previousSibling.dataset.active = "prepared"
 	}
+
 	else if (element.nextSibling) {
 		// @ts-ignore
 		element.nextSibling.dataset.active = "prepared"
 	}
 }
 
-// prevPhoto, currentPhoto, nextPhoto
 export const TransitionPhoto: React.FC<Props> = ({ photos, indexCurrentPhoto, className }) => {
 
 	const [prevIndexCurrentPhoto, setPrevIndexCurrentPhoto] = useState(indexCurrentPhoto)
@@ -81,10 +84,10 @@ export const TransitionPhoto: React.FC<Props> = ({ photos, indexCurrentPhoto, cl
 			{photos.map((photo, id) => (<img
 				key={photo.id}
 				className={s.transitionPhotoImage}
+				data-active={id === prevIndexCurrentPhoto}
 				src={photo.src}
 				alt={photo.desc}
 				loading="lazy"
-				data-active={id === prevIndexCurrentPhoto}
 			/>
 			))}	</div>
 	), [])

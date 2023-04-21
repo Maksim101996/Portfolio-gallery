@@ -46,8 +46,7 @@ function App() {
 					src: "/photos/7.jpg",
 					preview: "/photos/preview/7.jpg",
 					desc: "nature7"
-				},
-
+				}
 			]} />
 		</div>
 	)
